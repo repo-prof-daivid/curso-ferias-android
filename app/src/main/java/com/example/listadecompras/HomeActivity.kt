@@ -64,10 +64,8 @@ class HomeActivity : AppCompatActivity() {
     private fun setUpRecyclerView() {
         purchaseListItemAdapter = PurchaseListItemRecyclerViewAdapter(
             items = purchaseListItems,
-            onUpdate = { position ->
-                purchaseListItemAdapter.notifyItemChanged(position)
-            },
             onDelete = { position ->
+                purchaseListItems.remove(purchaseListItems[position])
                 purchaseListItemAdapter.notifyItemRemoved(position)
             }
         )

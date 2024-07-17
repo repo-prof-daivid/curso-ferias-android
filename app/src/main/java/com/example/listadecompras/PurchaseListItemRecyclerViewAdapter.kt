@@ -7,7 +7,6 @@ import com.example.listadecompras.databinding.ItemListBinding
 
 class PurchaseListItemRecyclerViewAdapter(
     private val items: List<PurchaseListItem>,
-    private val onUpdate: (Int) -> Unit,
     private val onDelete: (Int) -> Unit
 ): RecyclerView.Adapter<PurchaseListItemViewHolder>() {
 
@@ -26,7 +25,6 @@ class PurchaseListItemRecyclerViewAdapter(
         holder.bind(
             items[position],
             position,
-            onUpdate,
             onDelete
         )
     }
