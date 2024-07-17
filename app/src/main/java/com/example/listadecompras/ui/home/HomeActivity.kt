@@ -1,11 +1,13 @@
-package com.example.listadecompras
+package com.example.listadecompras.ui.home
 
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.listadecompras.databinding.ActivityHomeBinding
+import com.example.listadecompras.model.PurchaseListItem
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.toObject
@@ -21,6 +23,12 @@ class HomeActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        loadList()
+        setUpView()
+        setUpRecyclerView()
+    }
+
+    private fun loadList() {
         val auth = FirebaseAuth.getInstance()
         val firestore = FirebaseFirestore.getInstance()
         firestore.collection("USERS").document(auth.uid.toString()).collection("PURCHASE_LIST")
@@ -37,6 +45,8 @@ class HomeActivity : AppCompatActivity() {
                         val purchaseListItem = item.toObject<PurchaseListItem>()
                         purchaseListItem.id = item.id
                         purchaseListItems.add(purchaseListItem)
+                        // utilizar o notifyItemRangeChanged
+                        purchaseListItemAdapter.notifyDataSetChanged()
                     }
                 }
             }
@@ -47,10 +57,7 @@ class HomeActivity : AppCompatActivity() {
                     Toast.LENGTH_LONG
                 ).show()
             }
-            .addOnCompleteListener {
-                setUpRecyclerView()
-            }
-        setUpView()
+
     }
 
     private fun setUpView() {
@@ -69,7 +76,7 @@ class HomeActivity : AppCompatActivity() {
                 purchaseListItemAdapter.notifyItemRemoved(position)
             }
         )
-        binding.rvListShopping.layoutManager = LinearLayoutManager(this@HomeActivity)
+        binding.rvListShopping.layoutManager = GridLayoutManager(this, 2)
         binding.rvListShopping.adapter = purchaseListItemAdapter
     }
 }

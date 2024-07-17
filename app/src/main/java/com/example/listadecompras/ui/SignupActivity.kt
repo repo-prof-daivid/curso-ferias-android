@@ -1,4 +1,4 @@
-package com.example.listadecompras
+package com.example.listadecompras.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,8 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.listadecompras.databinding.ActivitySingUpBinding
+import com.example.listadecompras.model.User
+import com.example.listadecompras.ui.home.HomeActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -22,6 +24,7 @@ class SignupActivity : AppCompatActivity() {
     }
 
     private fun setUpView() {
+        // TODO VALIDAR CAMPOS DE EMAIL, NOME E SENHA (SEGUE O PADRÃO `@Ab12132`)
         binding.btnSingUp.setOnClickListener {
             binding.edtPwd.error = null
             binding.edtPwdConfirmation.error = null
@@ -32,9 +35,9 @@ class SignupActivity : AppCompatActivity() {
             val userConfirmPwd = binding.edtPwdConfirmation.text
 
             if (
-                userName.isNullOrEmpty() &&
-                userEmail.isNullOrEmpty() &&
-                userPwd.isNullOrEmpty() &&
+                userName.isNullOrEmpty() ||
+                userEmail.isNullOrEmpty() ||
+                userPwd.isNullOrEmpty() ||
                 userConfirmPwd.isNullOrEmpty()
             ) {
                 Toast.makeText(this@SignupActivity, "Verifique os campos e tente novamente!", Toast.LENGTH_LONG).show()

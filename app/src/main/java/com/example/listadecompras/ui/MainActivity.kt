@@ -1,4 +1,4 @@
-package com.example.listadecompras
+package com.example.listadecompras.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.listadecompras.databinding.ActivityMainBinding
+import com.example.listadecompras.ui.home.HomeActivity
 import com.google.firebase.auth.FirebaseAuth
 
 /**
@@ -16,7 +17,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setUpView() {
+        //TODO VALIDAR E-MAIL, CASO EMAIL INVÁLIDA NÃO SEGUIR COM A REQUEST E SOLICITAR QUE O USUÁRIO VERIFIQUE AS INFORMAÇÕES.
         binding.btnLogin.setOnClickListener {
             val user = binding.userName.text
             val pwd = binding.pwd.text

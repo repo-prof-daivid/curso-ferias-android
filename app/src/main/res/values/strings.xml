@@ -11,4 +11,6 @@
     <string name="add">Adicionar</string>
     <string name="purchased">Comprado</string>
     <string name="itemMeasurementUnit">Digite a unidade de medida:</string>
+
+    <string name="name_description">Nome: %s</string>
 </resources>

@@ -1,8 +1,10 @@
-package com.example.listadecompras
+package com.example.listadecompras.ui.home
 
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.listadecompras.R
 import com.example.listadecompras.databinding.ItemListBinding
+import com.example.listadecompras.model.PurchaseListItem
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -15,7 +17,9 @@ class PurchaseListItemViewHolder(
         position: Int,
         onDelete: (position: Int) -> Unit
     ) {
-        itemListBinding.txtName.text = purchaseListItem.name
+        itemListBinding.txtName.text =
+            itemListBinding.root.context.getString(R.string.name_description, purchaseListItem.name)
+
         itemListBinding.txtQtd.text = purchaseListItem.qtd
         itemListBinding.txtBrand.text = purchaseListItem.band
         itemListBinding.txtMeasurementUnit.text = purchaseListItem.measurementUnit

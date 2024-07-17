@@ -1,9 +1,10 @@
-package com.example.listadecompras
+package com.example.listadecompras.ui.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.listadecompras.databinding.ItemListBinding
+import com.example.listadecompras.model.PurchaseListItem
 
 class PurchaseListItemRecyclerViewAdapter(
     private val items: List<PurchaseListItem>,

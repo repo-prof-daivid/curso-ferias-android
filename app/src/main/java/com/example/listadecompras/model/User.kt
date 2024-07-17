@@ -1,4 +1,4 @@
-package com.example.listadecompras
+package com.example.listadecompras.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
