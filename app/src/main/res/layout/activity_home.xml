@@ -9,7 +9,7 @@
     tools:context=".HomeActivity">
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/name"
+        android:id="@+id/edtName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -17,20 +17,28 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/qtdItem"
+        android:id="@+id/edtMeasurementUnit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/itemMeasurementUnit"
+        app:layout_constraintTop_toBottomOf="@id/edtName" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edtQtdItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:hint="@string/item_qtd"
-        app:layout_constraintTop_toBottomOf="@id/name" />
+        app:layout_constraintTop_toBottomOf="@id/edtMeasurementUnit" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/brand"
+        android:id="@+id/edtBrand"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:hint="@string/item_brand"
-        app:layout_constraintTop_toBottomOf="@id/qtdItem" />
+        app:layout_constraintTop_toBottomOf="@id/edtQtdItem" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnAdd"
@@ -39,7 +47,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/add"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/brand" />
+        app:layout_constraintTop_toBottomOf="@id/edtBrand" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvListShopping"

@@ -9,4 +9,6 @@
     <string name="item_qtd">Digite a quantidade:</string>
     <string name="item_brand">Digite a marca do Item:</string>
     <string name="add">Adicionar</string>
+    <string name="purchased">Comprado</string>
+    <string name="itemMeasurementUnit">Digite a unidade de medida:</string>
 </resources>
