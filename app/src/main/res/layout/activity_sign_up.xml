@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    tools:context=".SignUpActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:srcCompat="@drawable/ic_launcher_foreground" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_marginTop="16dp"
+        android:padding="16dp"
+        android:id="@+id/edtName"
+        android:hint="@string/nome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edtEmail"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="@string/email" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_marginTop="16dp"
+        android:padding="16dp"
+        android:hint="@string/pwd"
+        android:id="@+id/edtPwd"
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_marginTop="16dp"
+        android:padding="16dp"
+        android:hint="@string/confirm_pwd"
+        android:inputType="textPassword"
+        android:id="@+id/edtPwdConfirmation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginTop="16dp"
+        android:text="@string/signupBotao"
+        android:id="@+id/btnSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+
+</LinearLayout>

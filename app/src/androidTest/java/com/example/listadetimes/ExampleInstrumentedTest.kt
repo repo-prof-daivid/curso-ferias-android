@@ -1,4 +1,4 @@
-package com.example.listadecompras
+package com.example.listadetimes
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
