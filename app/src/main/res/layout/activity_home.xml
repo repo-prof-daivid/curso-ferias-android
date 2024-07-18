@@ -11,7 +11,7 @@
 
 
     <EditText
-        android:id="@+id/nomeTime"
+        android:id="@+id/hoNomeTime"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -21,24 +21,24 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/quantidade"
+        android:id="@+id/hoQuantidade"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Quantidade de Público"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nomeTime" />
+        app:layout_constraintTop_toBottomOf="@+id/hoNomeTime" />
 
     <EditText
-        android:id="@+id/mascote"
+        android:id="@+id/hoMascote"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Nome do Mascote do Time"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quantidade" />
+        app:layout_constraintTop_toBottomOf="@+id/hoQuantidade" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvListTimes"
@@ -47,13 +47,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mascote"
-        tools:listitem="@layout/time_list"
+        app:layout_constraintTop_toBottomOf="@+id/hoMascote"
+        tools:listitem="@layout/team_list"
         app:layout_constraintVertical_bias="0.894" />
 
 
     <EditText
-        android:id="@+id/fundacao"
+        android:id="@+id/hoFundacao"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -62,11 +62,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mascote"
+        app:layout_constraintTop_toBottomOf="@+id/hoMascote"
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/cidade"
+        android:id="@+id/hoCidade"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -75,17 +75,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fundacao"
+        app:layout_constraintTop_toBottomOf="@+id/hoFundacao"
         app:layout_constraintVertical_bias="0.142" />
 
     <Button
-        android:id="@+id/btnAdicionar"
+        android:id="@+id/btnAddTeam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Adicionar na Lista"
         app:layout_constraintBottom_toTopOf="@+id/rvListTimes"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cidade" />
+        app:layout_constraintTop_toBottomOf="@+id/hoCidade" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
