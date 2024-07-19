@@ -36,9 +36,9 @@ class SignUpActivity : AppCompatActivity() {
             val userConfirmPwd = binding.edtPwdConfirmation.text
 
             if (
-                userName.isNullOrEmpty() &&
-                userEmail.isNullOrEmpty() &&
-                userPwd.isNullOrEmpty() &&
+                userName.isNullOrEmpty() ||
+                userEmail.isNullOrEmpty() ||
+                userPwd.isNullOrEmpty() ||
                 userConfirmPwd.isNullOrEmpty()
             ) {
                 Toast.makeText(this@SignUpActivity, "Verifique os campos e tente novamente!", Toast.LENGTH_LONG).show()

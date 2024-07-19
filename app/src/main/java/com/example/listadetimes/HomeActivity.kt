@@ -48,6 +48,7 @@ class HomeActivity : AppCompatActivity() {
                         favoriteListItems.add(listTeamItem)
                         // utilizar o notifyItemRangeChanged
                         favoriteTeamListAdapter.notifyItemRangeChanged(0, favoriteListItems.size)
+
                     }
                 }
             }
@@ -108,6 +109,7 @@ class HomeActivity : AppCompatActivity() {
                         binding.hoFundacao.text.clear()
 
                         // faz aparecer os itens na tela
+                        favoriteListItems.add(novoTimeFavorito)
                         favoriteTeamListAdapter.notifyItemInserted(favoriteListItems.size - 1)
                     }.addOnFailureListener { e ->
                         Log.e("FirestoreError", "Erro ao adicionar time", e)
@@ -136,8 +138,9 @@ class HomeActivity : AppCompatActivity() {
 
         binding.rvListTimes.layoutManager = GridLayoutManager(this, 2)
         binding.rvListTimes.adapter = favoriteTeamListAdapter
-    }
 
+
+    }
 
 
 }
