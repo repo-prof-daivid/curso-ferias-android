@@ -69,6 +69,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            android:button="@drawable/check_favorite_selector"
             tools:text="Favorito"
 
             />
