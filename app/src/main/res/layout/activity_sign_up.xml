@@ -13,7 +13,7 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:srcCompat="@drawable/ic_launcher_foreground" />
+        tools:srcCompat="@drawable/ic_signup_128" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:layout_marginTop="16dp"
@@ -57,6 +57,9 @@
         android:text="@string/signupBotao"
         android:id="@+id/btnSignUp"
         android:layout_width="match_parent"
+        android:background="@color/blue"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         android:layout_height="wrap_content" />
 
 

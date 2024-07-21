@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.listadetimes.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
+import android.text.InputType
 
 /**
  * Classe Responsável por manipular os elementos que ficarão visíveis na tela principal.
@@ -15,6 +16,7 @@ import com.google.firebase.auth.FirebaseAuth
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private var isPasswordVisible: Boolean = false
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setUpView()
+        changeVisibility()
     }
 
     /**
@@ -61,6 +64,27 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+
+
+
+    }
+
+    private fun changeVisibility() {
+        // Lógica para alternar a visibilidade da senha
+        binding.btnTogglePwdVisibility.setOnClickListener {
+            if (isPasswordVisible) {
+                // Ocultar senha
+                binding.pwd.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                binding.btnTogglePwdVisibility.setImageResource(R.drawable.ic_visibility_off_24)
+            } else {
+                // Mostrar senha
+                binding.pwd.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                binding.btnTogglePwdVisibility.setImageResource(R.drawable.ic_visibility_24)
+            }
+            isPasswordVisible = !isPasswordVisible
+            // Mover o cursor para o final do texto
+            binding.pwd.setSelection(binding.pwd.text.length)
+        }
     }
 
 }

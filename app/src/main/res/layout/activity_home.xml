@@ -83,6 +83,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Adicionar na Lista"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/blue"
         app:layout_constraintBottom_toTopOf="@+id/rvListTimes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hoCidade" />
