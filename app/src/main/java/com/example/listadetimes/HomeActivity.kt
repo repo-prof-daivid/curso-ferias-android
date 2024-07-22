@@ -38,7 +38,7 @@ class HomeActivity : AppCompatActivity() {
                 if (result.isEmpty) {
                     Toast.makeText(
                         this@HomeActivity,
-                        "Até o momento você ainda não tem Times na sua lista, começe o cadastro!",
+                        "Até o momento você ainda não tem Times na sua lista, adicione times a sua lista",
                         Toast.LENGTH_LONG
                     ).show()
                 } else {

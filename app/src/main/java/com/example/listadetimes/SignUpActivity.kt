@@ -12,6 +12,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import android.widget.Toast
 import android.content.Intent
+import android.util.Patterns
 
 
 class SignUpActivity : AppCompatActivity() {
@@ -35,6 +36,13 @@ class SignUpActivity : AppCompatActivity() {
             val userPwd = binding.edtPwd.text
             val userConfirmPwd = binding.edtPwdConfirmation.text
 
+
+            // Validação do email
+            if (!Patterns.EMAIL_ADDRESS.matcher(userEmail.toString()).matches()) {
+                Toast.makeText(this@SignUpActivity, "Por favor, insira um endereço de email válido.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
             if (
                 userName.isNullOrEmpty() ||
                 userEmail.isNullOrEmpty() ||
@@ -57,7 +65,7 @@ class SignUpActivity : AppCompatActivity() {
                     val intent = Intent(this, HomeActivity::class.java)
                     startActivity(intent)
                     finish()
-                    Toast.makeText(this@SignUpActivity, "O Usuario foi criado com sucesso", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@SignUpActivity, "O Usuário foi criado com sucesso", Toast.LENGTH_LONG).show()
                 }.addOnFailureListener {
                     Toast.makeText(this@SignUpActivity, "Ops, parece que houve um problema, tente novamente mais tarde!", Toast.LENGTH_LONG).show()
                 }

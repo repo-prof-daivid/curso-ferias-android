@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.listadetimes.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 import android.text.InputType
+import android.util.Patterns
 
 /**
  * Classe Responsável por manipular os elementos que ficarão visíveis na tela principal.
@@ -34,12 +35,19 @@ class MainActivity : AppCompatActivity() {
      * É no final vai para HomeActivity se o login for bem-sucedido, senão exibe mensagem de erro.
      */
     private fun setUpView() {
+
         binding.btnLogin.setOnClickListener {
             val user = binding.userName.text
             val pwd = binding.pwd.text
             val auth = FirebaseAuth.getInstance()
+
+
             if (user.isNullOrEmpty() || pwd.isNullOrEmpty()) {
-                Toast.makeText(this@MainActivity, "Verifique se o e-mail e a senha estão corretos!", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@MainActivity, "Há campos vazios, por favor preencha-os!", Toast.LENGTH_LONG).show()
+            } else if(!Patterns.EMAIL_ADDRESS.matcher(user.toString()).matches()){
+                // Validação do email
+                Toast.makeText(this@MainActivity, "Por favor, insira um endereço de email válido.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
             } else {
                 auth.signInWithEmailAndPassword(user.toString(), pwd.toString())
                     .addOnSuccessListener {
@@ -51,6 +59,9 @@ class MainActivity : AppCompatActivity() {
                         Toast.makeText(this@MainActivity, "Verifique se o e-mail e a senha estão corretos!", Toast.LENGTH_LONG).show()
                     }
             }
+
+
+
         }
 
         /**
