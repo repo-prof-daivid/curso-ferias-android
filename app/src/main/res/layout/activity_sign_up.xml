@@ -33,26 +33,55 @@
         android:layout_marginTop="16dp"
         android:hint="@string/email" />
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:layout_marginTop="16dp"
-        android:padding="16dp"
-        android:hint="@string/pwd"
-        android:id="@+id/edtPwd"
-        android:inputType="textPassword"
+    <!-- Container para a senha com botão de visibilidade -->
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:layout_marginTop="16dp"
-        android:padding="16dp"
-        android:hint="@string/confirm_pwd"
-        android:inputType="textPassword"
-        android:id="@+id/edtPwdConfirmation"
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtPwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:hint="@string/pwd"
+            android:inputType="textPassword" />
+
+        <ImageButton
+            android:id="@+id/btnTogglePwdVisibility"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_visibility_off_24"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+    <!-- Container para a confirmação de senha com botão de visibilidade -->
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
 
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtPwdConfirmation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:hint="@string/confirm_pwd"
+            android:inputType="textPassword" />
 
-
+        <ImageButton
+            android:id="@+id/btnTogglePwdConfirmationVisibility"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_visibility_off_24"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:layout_marginTop="16dp"
@@ -63,7 +92,5 @@
         android:textColor="@color/white"
         android:textStyle="bold"
         android:layout_height="wrap_content" />
-
-
 
 </LinearLayout>
