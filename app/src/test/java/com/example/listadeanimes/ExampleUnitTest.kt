@@ -1,4 +1,4 @@
-package com.example.listadecompras
+package com.example.listadeanimes
 
 import org.junit.Test
 
