@@ -7,6 +7,12 @@ Aula 1 foi ministrada no dia 10/07/2024. ✅
 
 Aula 2 foi ministrada no dia 11/07/2024. ✅
 
+Aula 3 foi ministrada no dia 15/07/2024. ✅
+
+Aula 4 foi ministrada no dia 16/07/2024. ✅
+
+Aula 5 foi ministrada no dia 17/07/2024. ✅
+
 
 ## Temática do meu App
 
@@ -29,4 +35,10 @@ Sevilla.
 **IDE:** Android Studio Koala.
 
 **Back-end e Front-end:** Kotlin, Firebase.
+
+
+## Link do Vídeo da Apresentação do Código e Projeto Funcionando
+
+**YouTube:** [FALTA O LINK! LEMBRAR].
+
 
