@@ -75,9 +75,8 @@ class HomeActivity : AppCompatActivity() {
             val foundationYear = binding.hoFoundationYear.text.toString()
 
             if (nameTeam.isEmpty() || stadiumAudience.isEmpty() || city.isEmpty() || mascot.isEmpty() || foundationYear.isEmpty()) {
-                // Exibir mensagem de erro, por exemplo, usando um Toast
                 Toast.makeText(this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener // Sai da função se houver campos vazios
+                return@setOnClickListener
             }
 
             val newTeamFavorite = FavoriteTeamList(
@@ -90,15 +89,15 @@ class HomeActivity : AppCompatActivity() {
 
             )
 
-            // 3. Adicionar no Firebase
+
             val auth = FirebaseAuth.getInstance()
             val firestore = FirebaseFirestore.getInstance()
-            if (auth.currentUser != null) { // Verifica se o usuário está logado
+            if (auth.currentUser != null) {
                 firestore.collection("USERS")
-                    .document(auth.currentUser!!.uid) // Usa o ID do usuário atual
-                    .collection("XPTO") // Nome da coleção para times favoritos
-                    .document(newTeamFavorite.id) // Usa o ID do novo time como nome do documento
-                    .set(newTeamFavorite) // Adiciona o novo time
+                    .document(auth.currentUser!!.uid)
+                    .collection("XPTO")
+                    .document(newTeamFavorite.id)
+                    .set(newTeamFavorite)
                     .addOnSuccessListener {
                         Toast.makeText(this, "Time adicionado com sucesso!", Toast.LENGTH_SHORT).show()
                         // Limpa os campos após adicionar
@@ -108,7 +107,7 @@ class HomeActivity : AppCompatActivity() {
                         binding.hoMascot.text.clear()
                         binding.hoFoundationYear.text.clear()
 
-                        // faz aparecer os itens na tela
+
                         favoriteListItems.add(newTeamFavorite)
                         favoriteTeamListAdapter.notifyItemInserted(favoriteListItems.size - 1)
                     }.addOnFailureListener { e ->
@@ -117,7 +116,6 @@ class HomeActivity : AppCompatActivity() {
                     }
 
             }else{
-                // Redireciona para a Activity de Login
                 startActivity(Intent(this, MainActivity::class.java))
                 Toast.makeText(this, "Você precisa estar logado para adicionar seus times favoritos.", Toast.LENGTH_SHORT).show()
                 finish()
