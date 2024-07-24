@@ -11,7 +11,7 @@
 
 
     <EditText
-        android:id="@+id/hoNomeTime"
+        android:id="@+id/hoNameTeam"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -21,39 +21,39 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/hoQuantidade"
+        android:id="@+id/hoStadiumAudience"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Quantidade de Público"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hoNomeTime" />
+        app:layout_constraintTop_toBottomOf="@+id/hoNameTeam" />
 
     <EditText
-        android:id="@+id/hoMascote"
+        android:id="@+id/hoMascot"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Nome do Mascote do Time"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hoQuantidade" />
+        app:layout_constraintTop_toBottomOf="@+id/hoStadiumAudience" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvListTimes"
+        android:id="@+id/rvListTeams"
         android:layout_width="409dp"
         android:layout_height="410dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hoMascote"
+        app:layout_constraintTop_toBottomOf="@+id/hoMascot"
         tools:listitem="@layout/team_list"
         app:layout_constraintVertical_bias="0.894" />
 
 
     <EditText
-        android:id="@+id/hoFundacao"
+        android:id="@+id/hoFoundationYear"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -62,11 +62,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hoMascote"
+        app:layout_constraintTop_toBottomOf="@+id/hoMascot"
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/hoCidade"
+        android:id="@+id/hoCity"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -75,7 +75,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hoFundacao"
+        app:layout_constraintTop_toBottomOf="@+id/hoFoundationYear"
         app:layout_constraintVertical_bias="0.142" />
 
     <Button
@@ -87,7 +87,7 @@
         android:backgroundTint="@color/blue"
         app:layout_constraintBottom_toTopOf="@+id/rvListTimes"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hoCidade" />
+        app:layout_constraintTop_toBottomOf="@+id/hoCity" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

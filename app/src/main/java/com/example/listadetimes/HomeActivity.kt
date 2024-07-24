@@ -68,25 +68,25 @@ class HomeActivity : AppCompatActivity() {
     private fun setUpView() {
         // 1. Validar campos
         binding.btnAddTeam.setOnClickListener {
-            val nomeTime = binding.hoNomeTime.text.toString()
-            val publicoEstadio = binding.hoQuantidade.text.toString()
-            val cidade = binding.hoCidade.text.toString()
-            val mascote = binding.hoMascote.text.toString()
-            val anoFundacao = binding.hoFundacao.text.toString()
+            val nameTeam = binding.hoNameTeam.text.toString()
+            val stadiumAudience = binding.hoStadiumAudience.text.toString()
+            val city = binding.hoCity.text.toString()
+            val mascot = binding.hoMascot.text.toString()
+            val foundationYear = binding.hoFoundationYear.text.toString()
 
-            if (nomeTime.isEmpty() || publicoEstadio.isEmpty() || cidade.isEmpty() || mascote.isEmpty() || anoFundacao.isEmpty()) {
+            if (nameTeam.isEmpty() || stadiumAudience.isEmpty() || city.isEmpty() || mascot.isEmpty() || foundationYear.isEmpty()) {
                 // Exibir mensagem de erro, por exemplo, usando um Toast
                 Toast.makeText(this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener // Sai da função se houver campos vazios
             }
 
-            val novoTimeFavorito = FavoriteTeamList(
+            val newTeamFavorite = FavoriteTeamList(
                 id = UUID.randomUUID().toString(),
-                nameTeam = binding.hoNomeTime.text.toString(),
-                stadiumAudience = binding.hoQuantidade.text.toString(),
-                city = binding.hoCidade.text.toString(),
-                mascot = binding.hoMascote.text.toString(),
-                foundationYear = binding.hoFundacao.text.toString(),
+                nameTeam = binding.hoNameTeam.text.toString(),
+                stadiumAudience = binding.hoStadiumAudience.text.toString(),
+                city = binding.hoCity.text.toString(),
+                mascot = binding.hoMascot.text.toString(),
+                foundationYear = binding.hoFoundationYear.text.toString(),
 
             )
 
@@ -97,19 +97,19 @@ class HomeActivity : AppCompatActivity() {
                 firestore.collection("USERS")
                     .document(auth.currentUser!!.uid) // Usa o ID do usuário atual
                     .collection("XPTO") // Nome da coleção para times favoritos
-                    .document(novoTimeFavorito.id) // Usa o ID do novo time como nome do documento
-                    .set(novoTimeFavorito) // Adiciona o novo time
+                    .document(newTeamFavorite.id) // Usa o ID do novo time como nome do documento
+                    .set(newTeamFavorite) // Adiciona o novo time
                     .addOnSuccessListener {
                         Toast.makeText(this, "Time adicionado com sucesso!", Toast.LENGTH_SHORT).show()
                         // Limpa os campos após adicionar
-                        binding.hoNomeTime.text.clear()
-                        binding.hoQuantidade.text.clear()
-                        binding.hoCidade.text.clear()
-                        binding.hoMascote.text.clear()
-                        binding.hoFundacao.text.clear()
+                        binding.hoNameTeam.text.clear()
+                        binding.hoStadiumAudience.text.clear()
+                        binding.hoCity.text.clear()
+                        binding.hoMascot.text.clear()
+                        binding.hoFoundationYear.text.clear()
 
                         // faz aparecer os itens na tela
-                        favoriteListItems.add(novoTimeFavorito)
+                        favoriteListItems.add(newTeamFavorite)
                         favoriteTeamListAdapter.notifyItemInserted(favoriteListItems.size - 1)
                     }.addOnFailureListener { e ->
                         Log.e("FirestoreError", "Erro ao adicionar time", e)
@@ -136,8 +136,8 @@ class HomeActivity : AppCompatActivity() {
             }
         )
 
-        binding.rvListTimes.layoutManager = GridLayoutManager(this, 2)
-        binding.rvListTimes.adapter = favoriteTeamListAdapter
+        binding.rvListTeams.layoutManager = GridLayoutManager(this, 2)
+        binding.rvListTeams.adapter = favoriteTeamListAdapter
 
 
     }
