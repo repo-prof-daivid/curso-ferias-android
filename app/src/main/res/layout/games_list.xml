@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:elevation="8dp"
+    app:cardCornerRadius="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            app:layout_constraintEnd_toStartOf="@id/cbfinished"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtgamename"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Halo 5" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtgametype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="FPS" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtdurationtime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="4 Horas" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtgrade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="8,3" />
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btnDelete"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_delete_24"
+            android:background="@null"
+            />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/cbfinished"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Jogados"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
