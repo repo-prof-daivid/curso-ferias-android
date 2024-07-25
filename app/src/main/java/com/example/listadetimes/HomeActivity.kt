@@ -55,7 +55,7 @@ class HomeActivity : AppCompatActivity() {
             .addOnFailureListener { e ->
                 Toast.makeText(
                     this@HomeActivity,
-                    "Infelizmente não foi possível carregar a lista!!! + ${e.message}",
+                    "Infelizmente não foi possível carregar a lista de times!!! + ${e.message}",
                     Toast.LENGTH_LONG
                 ).show()
             }

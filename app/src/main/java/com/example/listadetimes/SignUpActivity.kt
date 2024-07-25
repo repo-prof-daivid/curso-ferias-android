@@ -46,7 +46,7 @@ class SignUpActivity : AppCompatActivity() {
                 userPwd.isNullOrEmpty() ||
                 userConfirmPwd.isNullOrEmpty()
             ) {
-                Toast.makeText(this@SignUpActivity, "Verifique os campos e tente novamente!", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@SignUpActivity, "Há campos vazios, por favor preencha-os!", Toast.LENGTH_LONG).show()
             } else if (userPwd.toString() != userConfirmPwd.toString()) {
                 binding.edtPwd.error = "Verifique o Campo!"
                 binding.edtPwdConfirmation.error = "Verifique o Campo!"
@@ -54,9 +54,9 @@ class SignUpActivity : AppCompatActivity() {
             } else if(!Patterns.EMAIL_ADDRESS.matcher(userEmail.toString()).matches()) {
                 // Validação do email
                 Toast.makeText(this@SignUpActivity, "Por favor, insira um endereço de email válido.", Toast.LENGTH_SHORT).show()
-            }else if(userName.isEmpty()){
+            }else if(userName.toString().isEmpty()){
                 // Validação de Nome
-                binding.edtName.error = "O nome não pode estar vazio."
+                binding.edtName.error = "O Nome não pode estar vazio."
                 Toast.makeText(this@SignUpActivity, "Verifique os campos e tente novamente!", Toast.LENGTH_LONG).show()
             }else if(!userPwd.toString().matches(passwordValidation.toRegex())){
                 // Validação da senha

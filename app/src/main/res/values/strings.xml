@@ -1,8 +1,20 @@
 <resources>
     <string name="app_name">Lista de Times</string>
-    <string name="signupBotao">Cadastre-se</string>
+    <string name="signupBtn">Cadastre-se</string>
     <string name="confirm_pwd">Confirme sua Senha:</string>
     <string name="pwd">Digite sua Senha:</string>
     <string name="nome">Digite seu nome:</string>
     <string name="email">Digite seu E-mail:</string>
+
+    <string name="main_email">Digite seu E-mail:</string>
+    <string name="main_pwd">Digite sua Senha:</string>
+    <string name="btn_main_login">Login</string>
+    <string name="btn_main_signup">Não tem conta? Cadastre-se aqui!</string>
+
+    <string name="home_name_team">Digite o nome do Time</string>
+    <string name="home_stadium_audience">Quantidade de Público</string>
+    <string name="home_mascot">Nome do Mascote do Time</string>
+    <string name="home_foundation_year">Ano de Fundaçao do Time</string>
+    <string name="home_city">Nome da Cidade que foi Fundado</string>
+    <string name="home_btn_add_team_text">Adicionar na Lista</string>
 </resources>
