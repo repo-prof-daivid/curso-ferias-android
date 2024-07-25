@@ -26,7 +26,7 @@ class ListaActivity : AppCompatActivity() {
         binding = ActivityListaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        loadList() // Certifique-se de chamar o método loadList em algum ponto, como aqui
+        loadList()
         setUpView()
         setUpRecyclerView()
     }
@@ -40,7 +40,7 @@ class ListaActivity : AppCompatActivity() {
                 if (result.isEmpty) {
                     Toast.makeText(
                         this@ListaActivity,
-                        "Até o momento você ainda não tem times na sua lista, adicione times a sua lista",
+                        "Até o momento você ainda não tem Animes Adiconados na lista",
                         Toast.LENGTH_LONG
                     ).show()
                 } else {
@@ -56,14 +56,16 @@ class ListaActivity : AppCompatActivity() {
             .addOnFailureListener { e ->
                 Toast.makeText(
                     this@ListaActivity,
-                    "Infelizmente não foi possível carregar a lista!!! + ${e.message}",
+                    "Infelizmente não foi possível carregar a lista! + ${e.message}",
                     Toast.LENGTH_LONG
                 ).show()
             }
+
     }
 
+
     private fun setUpView() {
-        // 1. Validar campos
+
         binding.btnlista.setOnClickListener {
             val episodio = binding.epdAnime.text.toString()
             val titulo = binding.TituloAnime.toString()
@@ -72,9 +74,9 @@ class ListaActivity : AppCompatActivity() {
 
 
             if (episodio.isEmpty() || titulo.isEmpty() || ano.isEmpty() || genero.isEmpty()) {
-                // Exibir mensagem de erro, por exemplo, usando um Toast
+
                 Toast.makeText(this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener // Sai da função se houver campos vazios
+                return@setOnClickListener
             }
 
             val novoAnimeChecado = AnimeLista(
@@ -87,37 +89,31 @@ class ListaActivity : AppCompatActivity() {
 
                 )
 
-            // 3. Adicionar no Firebase
+
             val auth = FirebaseAuth.getInstance()
             val firestore = FirebaseFirestore.getInstance()
-            if (auth.currentUser != null) { // Verifica se o usuário está logado
+            if (auth.currentUser != null) {
                 firestore.collection("USERS")
-                    .document(auth.currentUser!!.uid) // Usa o ID do usuário atual
-                    .collection("XPTO") // Nome da coleção para times favoritos
-                    .document(novoAnimeChecado.id) // Usa o ID do novo time como nome do documento
-                    .set(novoAnimeChecado) // Adiciona o novo time
+                    .document(auth.currentUser!!.uid) //
+                    .collection("XPTO") //
+                    .document(novoAnimeChecado.id) //
+                    .set(novoAnimeChecado) //
                     .addOnSuccessListener {
-                        Toast.makeText(this, "Time adicionado com sucesso!", Toast.LENGTH_SHORT).show()
-                        // Limpa os campos após adicionar
+                        Toast.makeText(this, "Anime Adicionado com sucesso!", Toast.LENGTH_SHORT).show()
+
                         binding.lcdAnime.text.clear()
                         binding.TituloAnime.text.clear()
                         binding.epdAnime.text.clear()
                         binding.Genero.text.clear()
 
 
-                        // faz aparecer os itens na tela
                         animeList.add(novoAnimeChecado)
                         animeListAdapter.notifyItemInserted( animeList.size - 1)
                     }.addOnFailureListener { e ->
-                        Log.e("FirestoreError", "Erro ao adicionar time", e)
-                        Toast.makeText(this, "Erro ao adicionar time", Toast.LENGTH_SHORT).show()
+                        Log.e("FirestoreError", "Erro ao adicionar Anime", e)
+                        Toast.makeText(this, "Erro ao adicionar Anime", Toast.LENGTH_SHORT).show()
                     }
 
-            }else{
-                // Redireciona para a Activity de Login
-                startActivity(Intent(this, MainActivity::class.java))
-                Toast.makeText(this, "Você precisa estar logado para adicionar seus times favoritos.", Toast.LENGTH_SHORT).show()
-                finish()
             }
 
         }

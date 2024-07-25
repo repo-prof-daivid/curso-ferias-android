@@ -5,48 +5,70 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#303030 "
     tools:context=".Ui.Home.ListaActivity">
 
 
     <EditText
         android:id="@+id/epdAnime"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Número de Episódios"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="22dp"
+        android:background="#ffff"
+        android:ems="10"
+        android:hint="Numero de episodios"
+        android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/Genero"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TituloAnime" />
-
-    <EditText
-        android:id="@+id/TituloAnime"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:hint="Titulo do Anime"
-        app:layout_constraintBottom_toTopOf="@+id/epdAnime"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lcdAnime" />
 
-
     <EditText
-        android:id="@+id/lcdAnime"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="51dp"
-        android:hint="Ano de lancamento"
-        app:layout_constraintBottom_toTopOf="@+id/TituloAnime"
+        android:id="@+id/TituloAnime"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="19dp"
+        android:background="#ffff"
+        android:ems="10"
+        android:hint="Titulo do Anime"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/lcdAnime"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+        android:id="@+id/lcdAnime"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="20dp"
+        android:background="#ffff"
+        android:ems="10"
+        android:hint="Ano de Lançamento"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/epdAnime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TituloAnime" />
+
+    <EditText
         android:id="@+id/Genero"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="7dp"
-        android:hint="Genero do Anime"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="9dp"
+        android:background="#ffff"
+        android:ems="10"
+        android:hint="Gênero do Anime"
+        android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/btnlista"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,11 +78,10 @@
         android:id="@+id/btnlista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#FF5722"
         android:text="Adicionar na Lista"
         app:layout_constraintBottom_toTopOf="@+id/AnimeList"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.935"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/AnimeList"
         app:layout_constraintTop_toBottomOf="@+id/Genero" />
 
     <androidx.recyclerview.widget.RecyclerView
