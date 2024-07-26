@@ -41,7 +41,6 @@ class SignUpActivity : AppCompatActivity() {
 
 
             if (
-                userName.isNullOrEmpty() ||
                 userEmail.isNullOrEmpty() ||
                 userPwd.isNullOrEmpty() ||
                 userConfirmPwd.isNullOrEmpty()
