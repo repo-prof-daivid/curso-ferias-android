@@ -8,9 +8,11 @@
     android:elevation="8dp"
     app:cardCornerRadius="8dp">
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/black"
         android:padding="8dp">
 
         <LinearLayout
@@ -26,25 +28,29 @@
                 android:id="@+id/txtgamename"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:text="Halo 5" />
+                tools:text="Halo 5"
+                android:textColor="@color/darker_gray" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/txtgametype"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:text="FPS" />
+                tools:text="FPS"
+                android:textColor="@color/darker_gray"/>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/txtdurationtime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:text="4 Horas" />
+                tools:text="4 Horas"
+                android:textColor="@color/darker_gray" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/txtgrade"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:text="8,3" />
+                tools:text="8,3"
+                android:textColor="@color/darker_gray" />
 
         </LinearLayout>
 
@@ -64,7 +70,8 @@
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="Jogados"
+            android:text="Finalizado"
+            android:textColor="@color/dark_orange"
             />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

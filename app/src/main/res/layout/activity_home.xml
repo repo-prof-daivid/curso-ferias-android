@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
+    android:background="@android:color/black"
     tools:context=".ui.home.HomeActivity">
-
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/nome"
@@ -17,6 +18,8 @@
         android:layout_marginEnd="2dp"
         android:layout_marginBottom="5dp"
         android:hint="Nome do jogo"
+        android:textColor="@android:color/white"
+        android:textColorHint="@color/darker_gray"
         app:layout_constraintBottom_toTopOf="@+id/genero"
         app:layout_constraintEnd_toEndOf="@+id/genero"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,6 +31,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
         android:hint="Genero"
+        android:textColor="@android:color/white"
+        android:textColorHint="@color/darker_gray"
         app:layout_constraintBottom_toTopOf="@+id/tempoDeDuração"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nome" />
@@ -40,6 +45,8 @@
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="2dp"
         android:hint="Tempo de duração"
+        android:textColor="@android:color/white"
+        android:textColorHint="@color/darker_gray"
         app:layout_constraintBottom_toTopOf="@+id/nota"
         app:layout_constraintEnd_toEndOf="@+id/genero"
         app:layout_constraintStart_toStartOf="@+id/nome"
@@ -52,6 +59,8 @@
         android:layout_marginStart="5dp"
         android:layout_marginBottom="2dp"
         android:hint="nota"
+        android:textColor="@android:color/white"
+        android:textColorHint="@color/darker_gray"
         app:layout_constraintBottom_toTopOf="@+id/btnAdd"
         app:layout_constraintStart_toStartOf="@+id/tempoDeDuração"
         app:layout_constraintTop_toBottomOf="@+id/tempoDeDuração" />
@@ -62,6 +71,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
         android:text="Novo jogo"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/dark_orange"
         app:layout_constraintBottom_toTopOf="@+id/listaJogos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nota" />
