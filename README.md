@@ -39,6 +39,6 @@ Sevilla.
 
 ## Link do Vídeo da Apresentação do Código e Projeto Funcionando
 
-**YouTube:** [FALTA O LINK! LEMBRAR].
-
+**YouTube: "Explicação do Código "** https://youtu.be/KZZOBgFb2OM <br>
+**YouTube: "Projeto Rodando"**  https://youtu.be/a_7WjQkeT4w
 
