@@ -10,12 +10,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ListaDeCompras"
+        android:theme="@style/Base.Theme.JogosDivertidos"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.SignupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.MainActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
