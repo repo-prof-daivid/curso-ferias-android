@@ -25,5 +25,7 @@ Front-end e Back-end : Kotlin, Firebase.
 
 ## Link do Vídeo Sobre o projeto + Explicação do Código 
 
-YouTube: [...]
+YouTube: video 1 : https://youtu.be/Nuvj9BQXDqs
+         video 2 : https://youtu.be/dryc3JWNp9w
+         video 3 : https://youtu.be/zgLcI41WwZk 
 
